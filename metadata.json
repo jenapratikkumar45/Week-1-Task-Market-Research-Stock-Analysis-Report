@@ -1,0 +1,6 @@
+{
+  "name": "Market Research & Stock Analysis Report Builder",
+  "description": "Interactive financial report builder with AI-powered stock research, live charts, customized drafting, and professional Word document (.DOC) export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
