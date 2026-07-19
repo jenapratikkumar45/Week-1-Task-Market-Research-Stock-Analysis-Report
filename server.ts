@@ -150,9 +150,10 @@ Ensure that:
             },
             conclusiveInsights: {
               type: Type.OBJECT,
-              required: ["summary", "recommendations", "investmentHypotheses"],
+              required: ["summary", "aiInsightSummary", "recommendations", "investmentHypotheses"],
               properties: {
                 summary: { type: Type.STRING, description: "Authoritative synthesis of the entire report's findings." },
+                aiInsightSummary: { type: Type.STRING, description: "A concise 1-2 sentence high-level AI insight or takeaway summarizing the core conclusion." },
                 recommendations: {
                   type: Type.ARRAY,
                   items: { type: Type.STRING },
@@ -176,6 +177,10 @@ Ensure that:
                   description: { type: Type.STRING, description: "Brief description of how the resource was utilized." }
                 }
               }
+            },
+            footerNotes: {
+              type: Type.STRING,
+              description: "Brief disclaimer or footer note for the report."
             }
           }
         }

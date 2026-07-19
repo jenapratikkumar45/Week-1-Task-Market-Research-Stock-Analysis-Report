@@ -121,6 +121,7 @@ export const SAMPLE_REPORT: ReportData = {
   ],
   conclusiveInsights: {
     summary: "This report synthesizes comprehensive research conducted on Microsoft (MSFT), Eli Lilly (LLY), and Tesla (TSLA) representing three primary sectors: Technology, Healthcare, and Consumer Cyclical. In a cooling inflation and stabilizing rate environment, Microsoft represents the core foundation of high-margin structural growth. Eli Lilly provides extraordinary secular demand insulated from macroeconomic cycles due to its breakthrough obesity drug pipeline, despite carrying a premium price. Tesla remains a high-volatility, high-potential asset where the energy storage division is starting to offset automotive cyclicality while the market waits for autonomous software catalysts.",
+    aiInsightSummary: "Market dynamics show a clear shift towards AI-integrated enterprise software and high-margin healthcare therapeutics, while consumer cyclicals face macro headwinds.",
     recommendations: [
       "Microsoft (MSFT): Maintain as core long-term hold; track Azure cloud growth rates against hardware CAPEX expenditures to ensure healthy returns on investment.",
       "Eli Lilly (LLY): Track therapeutic supply chain expansion and international commercial rollouts; monitor competitive biosimilar pipelines that could disrupt Tirzepatide margins.",
@@ -148,5 +149,6 @@ export const SAMPLE_REPORT: ReportData = {
       url: "https://finance.yahoo.com",
       description: "Gathered historical trading prices, volume averages, beta ratings, P/E ratios, and institutional dividend coverage."
     }
-  ]
+  ],
+  footerNotes: "Confidential and Proprietary. Not intended as direct financial advice."
 };

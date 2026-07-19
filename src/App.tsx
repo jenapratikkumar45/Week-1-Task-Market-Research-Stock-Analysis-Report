@@ -29,6 +29,7 @@ import {
 import { CompanySelection, ReportData, SavedReport } from "./types";
 import { PRE_SEEDED_COMPANIES, SAMPLE_REPORT } from "./data";
 import FinancialCharts from "./components/FinancialCharts";
+import ComparativeTable from "./components/ComparativeTable";
 import MarketOverviewComp from "./components/MarketOverviewComp";
 import CompanyProfiles from "./components/CompanyProfiles";
 import ConclusiveInsightsComp from "./components/ConclusiveInsightsComp";
@@ -508,7 +509,7 @@ export default function App() {
   ${referencesList}
 
   <div class="footer">
-    End of Equity Research Report – Confidential and Proprietary Document
+    ${report.footerNotes || "End of Equity Research Report – Confidential and Proprietary Document"}
   </div>
 
 </body>
@@ -976,6 +977,9 @@ export default function App() {
                   onChange={(updated) => setReportData({ ...reportData, marketOverview: updated })}
                 />
 
+                {/* DYNAMIC COMPARATIVE TABLE */}
+                <ComparativeTable companies={reportData.companiesAnalysis} />
+
                 {/* DYNAMIC VALUATION VISUALIZATION GRAPH */}
                 <FinancialCharts companies={reportData.companiesAnalysis} />
 
@@ -997,9 +1001,18 @@ export default function App() {
                   onChange={(updated) => setReportData({ ...reportData, references: updated })}
                 />
 
-                {/* PAPER FOOTER */}
-                <div className="border-t border-slate-100 pt-6 text-center text-[10px] text-slate-400">
-                  End of Draft Report – Week 1 Financial Portfolio Series. Generated using Gemini Deep Analysis.
+                {/* PAPER FOOTER & DISCLAIMER */}
+                <div className="border-t border-slate-100 pt-6">
+                  <div className="bg-slate-50 border border-slate-100 rounded-lg p-3">
+                    <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1">Report Footer Disclaimer</label>
+                    <input
+                      type="text"
+                      value={reportData.footerNotes || ""}
+                      onChange={(e) => setReportData({ ...reportData, footerNotes: e.target.value })}
+                      className="w-full bg-transparent border-none p-0 text-[10px] text-slate-500 text-center focus:ring-0 outline-hidden italic"
+                      placeholder="e.g. Confidential and Proprietary. Not intended as direct financial advice."
+                    />
+                  </div>
                 </div>
 
               </div>

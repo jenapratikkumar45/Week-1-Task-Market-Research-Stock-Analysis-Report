@@ -31,6 +31,7 @@ export interface MarketOverview {
 
 export interface ConclusiveInsights {
   summary: string;
+  aiInsightSummary: string;
   recommendations: string[];
   investmentHypotheses: string[];
 }
@@ -46,6 +47,7 @@ export interface ReportData {
   companiesAnalysis: CompanyAnalysis[];
   conclusiveInsights: ConclusiveInsights;
   references: Reference[];
+  footerNotes: string;
 }
 
 export interface SavedReport {

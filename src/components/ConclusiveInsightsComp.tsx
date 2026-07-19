@@ -54,6 +54,19 @@ export default function ConclusiveInsightsComp({ data, onChange }: ConclusiveIns
         </div>
       </div>
 
+      {/* AI Insight Highlight */}
+      {data.aiInsightSummary && (
+        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-lg p-4 flex items-start gap-3">
+          <div className="mt-0.5 p-1.5 bg-indigo-600 text-white rounded-md shadow-xs">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <h4 className="text-[10px] font-bold text-indigo-800 uppercase tracking-wider mb-1">AI Analyst Insight</h4>
+            <p className="text-sm text-indigo-900 font-medium leading-snug">{data.aiInsightSummary}</p>
+          </div>
+        </div>
+      )}
+
       {/* Synthesis Executive Summary */}
       <div className="space-y-2">
         <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider">
